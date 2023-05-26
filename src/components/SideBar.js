@@ -10,7 +10,14 @@ const navigationIcons = [
   <AiOutlineHome size={35} />,
   <AiOutlineSearch size={35} />,
 ];
+
+const navigationTooltips = ["Home", "Search"];
+
 const albumIcons = [
+  iuCover,
+  iuCover,
+  iuCover,
+  iuCover,
   iuCover,
   iuCover,
   iuCover,
@@ -21,22 +28,46 @@ const albumIcons = [
   iuCover,
 ];
 
+const albumTooltips = [
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+  "IU Celebrity",
+];
+
 const SideBar = () => {
   return (
     <div className="sidebar-container">
-      <SideBarSection icons={navigationIcons} />
-      <SideBarSection icons={albumIcons} />
+      <SideBarSection
+        icons={navigationIcons}
+        tooltipTexts={navigationTooltips}
+      />
+      <SideBarSection icons={albumIcons} tooltipTexts={albumTooltips} />
     </div>
   );
 };
 
 export default SideBar;
 
-const SideBarSection = ({ icons }) => {
+const SideBarSection = ({ icons, tooltipTexts }) => {
   return (
     <div className="sidebar-section">
       {icons?.map((icon, index) => {
-        return <SideBarItem key={index} icon={icon} />;
+        return (
+          <SideBarItem
+            key={index}
+            icon={icon}
+            tooltipText={tooltipTexts[index]}
+          />
+        );
       })}
     </div>
   );

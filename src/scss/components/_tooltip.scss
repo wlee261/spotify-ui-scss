@@ -1,0 +1,15 @@
+@use '../design-tokens/colors';
+
+.tooltip {
+    display: flex;
+    position: absolute;
+    background-color: colors.$primary-color;
+    border-radius: 0.25rem;
+    color: white;
+    height: 2rem;
+    width: auto;
+    left: 6rem;
+    text-align: center;
+    padding: 0.5rem;
+    align-items: center;
+}
