@@ -1,0 +1,20 @@
+@use '../tools/mixins';
+@use '../design-tokens/colors';
+
+.sidebar-item--container {
+    @include mixins.flex-column-centered();
+    height: auto;
+    width: 85%;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+    overflow: hidden;
+}
+
+.sidebar-item--album {
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-item--icon:hover {
+    color: colors.$text-hover;
+}
